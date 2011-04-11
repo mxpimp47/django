@@ -1,7 +1,7 @@
-from django.db import models
 from django.contrib.contenttypes import generic
-from django.db.models import signals
 from django.contrib.contenttypes.models import ContentType
+from django.db import models
+from django.db.models import signals
 from django.db.models.signals import post_save
 
 from blog.models import Entry
