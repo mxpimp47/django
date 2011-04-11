@@ -2,11 +2,10 @@ from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.syndication.feeds import Feed
 from django.db import models
-from django.db.models import signals
-from django.db.models.signals import post_save
+# from django.db.models.signals import post_save
 
-from blog.models import Entry
-from links.models import Link
+# from blog.models import Entry
+# from links.models import Link
 
 
 class TumbleItem(models.Model):
@@ -22,8 +21,8 @@ class TumbleItem(models.Model):
         return self.content_type.name
 
 
-for modelname in [Entry, Link]:
-    dispatcher.connect(create_tumble_item, signal=signals.post_save, sender=modelname)
+# post_save.connect(create_tweet_item, sender=Entry)
+# post_save.connect(create_tweet_item, sender=Link)
 
 
 class LatestItems(Feed):
