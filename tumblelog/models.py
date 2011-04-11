@@ -20,14 +20,17 @@ class TumbleItem(models.Model):
     def __unicode__(self):
         return self.content_type.name
 
-	for modelname in [Entry, Link]:
-		dispatcher.connect(create_tumble_item, signal=signals.post_save, sender=modelname)
-		from django.contrib.syndication.feeds import Feed
-		class LatestItems(Feed):
-		    title = "My Tumblelog: Links"
-		    link = "/tumblelog/"
-		    description = "Latest Items posted to mysite.com"
-		    description_template = 'feeds/description.html'
 
-		    def items(self):
-		        return TumbleItems.objects.all.order_by('-pub_date')[:10]
+for modelname in [Entry, Link]:
+    dispatcher.connect(create_tumble_item, signal=signals.post_save, sender=modelname)
+
+
+from django.contrib.syndication.feeds import Feed
+class LatestItems(Feed):
+    title = "My Tumblelog: Links"
+    link = "/tumblelog/"
+    description = "Latest Items posted to mysite.com"
+    description_template = 'feeds/description.html'
+
+    def items(self):
+        return TumbleItems.objects.all.order_by('-pub_date')[:10]
