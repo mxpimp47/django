@@ -1,5 +1,6 @@
 from django.contrib.contenttypes import generic
 from django.contrib.contenttypes.models import ContentType
+from django.contrib.syndication.feeds import Feed
 from django.db import models
 from django.db.models import signals
 from django.db.models.signals import post_save
@@ -25,7 +26,6 @@ for modelname in [Entry, Link]:
     dispatcher.connect(create_tumble_item, signal=signals.post_save, sender=modelname)
 
 
-from django.contrib.syndication.feeds import Feed
 class LatestItems(Feed):
     title = "My Tumblelog: Links"
     link = "/tumblelog/"
