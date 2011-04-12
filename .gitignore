@@ -1,4 +1,6 @@
 # mac os x leaves these around
 .DS_Store
-
+tumblelog/__init__.pyc
+tumblelog/models.pyc
+tumblelog/views.pyc
 
