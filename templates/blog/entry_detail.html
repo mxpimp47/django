@@ -2,7 +2,7 @@
 
 {% block pagetitle %}Tumblelog{% endblock %}
 
-{% block title  %}My Page Headline{% endblock %}
+{% block title %}My Page Headline{% endblock %}
 
 {% block primary %}
 
@@ -14,7 +14,7 @@
 
 	 {{ object.body_html|truncatewords_html:"20"|safe }}
 
-	<p>tags: {% for tag in object.get_tags%}<a href="/blog/tags/{{tag.name|slugify}}/">{{tag}}</a>{% endfor&nbsp;%}</p>
+	<p>tags: {% for tag in object.get_tags%}<a href="/blog/tags/{{tag.name|slugify}}/">{{tag}}</a>{% endfor %}</p>
 
 	<p><a href="{{object.get_absolute_url}}">read more</a></p>
 
