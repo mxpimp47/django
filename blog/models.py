@@ -31,7 +31,7 @@ class Entry(models.Model):
                 return u'%s' % self.title
 
         def get_absolute_url(self):
-                return "/blogs/%d" % self.id
+                return "/blogs/%d/" % self.id
 
         def get_previous_published(self):
                 return self.get_previous_by_pub_date(status__exact=1)
