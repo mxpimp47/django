@@ -32,4 +32,4 @@ class LatestItems(Feed):
     description_template = 'feeds/description.html'
 
     def items(self):
-        return TumbleItem.objects.all.order_by('-pub_date')[:10]
+        return TumbleItem.objects.order_by('-pub_date').all()[:10]

@@ -1,0 +1,28 @@
+{{object.title}}
+
+{% block pagetitle&nbsp;%}Tumblelog{% endblock&nbsp;%}
+
+{% block title&nbsp;%}My Page Headline{% endblock&nbsp;%}
+
+{% block primary&nbsp;%}
+
+{% for object in latest&nbsp;%}
+
+	<h2>{{ object.title }}</h2>
+
+
+
+	<p>{{ object.pub_date }}</p>
+
+	 {{ object.body_html|truncatewords_html:"20"|safe }}
+
+	<p>tags: {% for tag in object.get_tags%}<a href="/blog/tags/{{tag.name|slugify}}/">{{tag}}</a>{% endfor&nbsp;%}</p>
+
+	<p><a href="{{object.get_absolute_url}}">read more</a></p>
+
+
+
+{% endfor&nbsp;%}
+
+{% endblock&nbsp;%}
+
