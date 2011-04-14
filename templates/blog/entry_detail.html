@@ -1,12 +1,10 @@
 {{object.title}}
 
-{% block pagetitle&nbsp;%}Tumblelog{% endblock&nbsp;%}
+{% block pagetitle %}Tumblelog{% endblock %}
 
-{% block title&nbsp;%}My Page Headline{% endblock&nbsp;%}
+{% block title  %}My Page Headline{% endblock %}
 
-{% block primary&nbsp;%}
-
-{% for object in latest&nbsp;%}
+{% block primary %}
 
 	<h2>{{ object.title }}</h2>
 
@@ -21,8 +19,4 @@
 	<p><a href="{{object.get_absolute_url}}">read more</a></p>
 
 
-
-{% endfor&nbsp;%}
-
-{% endblock&nbsp;%}
-
+{% endblock %}
