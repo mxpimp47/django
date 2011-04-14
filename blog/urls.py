@@ -7,6 +7,6 @@ from tagging.views import tagged_object_list
 info_dict = {'queryset': Entry.objects.all() }
 
 urlpatterns = patterns('',
-                       url(r'^(?P<object_id>\d]+)/$', object_detail, info_dict),
+                       url(r'^(?P<object_id>\d+)/$', object_detail, info_dict),
                        url(r'^$', object_list, info_dict),
                        )
